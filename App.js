@@ -18,9 +18,6 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/search' component={Search} />
-        <Route exact path='/addPhoto' component={AddPhoto} />
-        <Route exact path='/likes' component={Likes} />
-        <Route exact path='/myPhotos' component={MyPhotos} />
       </Switch>
       <BottomNav/>
     </SafeAreaView>
