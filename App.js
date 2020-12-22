@@ -1,21 +1,34 @@
-
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {SafeAreaView} from 'react-native';
+import {NativeRouter, Switch, Route} from 'react-router-native';
+import { t } from 'react-native-tailwindcss';
 
-export default function App() {
+// Components
+import BottomNav from './components/BottomNav';
+
+// Pages
+import Home from './pages/Home';
+import Search from './pages/Search';
+
+
+// Main App
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={[t.bgGray100, t.flex, t.hFull , t.wFull]}>
+      <Switch>
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/search' component={Search} />
+        <Route exact path='/addPhoto' component={AddPhoto} />
+        <Route exact path='/likes' component={Likes} />
+        <Route exact path='/myPhotos' component={MyPhotos} />
+      </Switch>
+      <BottomNav/>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default  () => (
+  <NativeRouter>
+    <App/>
+  </NativeRouter>
+)
