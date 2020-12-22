@@ -1,0 +1,12 @@
+{
+  "name": "tone",
+  "displayName": "tone",
+  "expo": {
+    "name": "tone",
+    "slug": "tone",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
